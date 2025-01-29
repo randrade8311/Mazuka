@@ -1,0 +1,81 @@
+:root {
+    --headerFont: "Playfair Display", serif;
+    --secondaryFont: "Source Sans 3" , serif;
+
+    --headerColor: #6E8A62;
+    --secondaryColor: #666;
+
+    --sectionBg: #EAEDE8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--headerFont);
+    color: var(--headerColor);
+}
+
+a, p {
+    font-family: var(--secondaryFont);
+    color: var(--secondaryColor);
+}
+
+#heroSection h1{
+    color: white;
+}
+
+.menuSection img {
+    filter: drop-shadow(#808080 7px 7px 7px);
+}
+
+.bgColor {
+    background-color: var(--sectionBg);
+}
+
+.bgColor img {
+    height: 300px;
+    width: 300px;
+    object-fit:cover;
+}
+
+.gallery img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.bgColorFooter {
+    background-color: var(--sectionBg);
+}
+
+.bgColorFooter img {
+    height: 200px;
+}
+
+.bgColorFooter i {
+    color: #94A289;
+    margin: .5rem;
+    font-size: 2rem;
+}
+
+.bgColorFooter a {
+    text-decoration: none;
+}
+
+.form-control::placeholder {
+    color: var(--secondaryColor);
+}
+
+.contactForm button {
+    background-color: var(--sectionBg);
+    border-color: var(--headerColor);
+    color: var(--secondaryColor);
+}
+
+#heroSection {
+    background-image: url("imgs/heroBg.jpeg");
+    background-position: center;
+    height:max-content;
+    background-size: cover;
+    padding: 250px 0;
+    color: white;
+    opacity: .75;
+}
