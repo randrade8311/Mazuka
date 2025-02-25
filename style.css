@@ -8,6 +8,38 @@
     --sectionBg: #EAEDE8;
 }
 
+@keyframes appearBottom {
+    from {
+        opacity: 0;
+        /* scale: 0.5; */
+        transform: translateY(30px) scale(0.9);
+    }
+    to { 
+        opacity: 1;
+        /* scale: 1; */
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: .75;
+        transform: translateY(0);
+    }
+}
+.scrollBlock {
+    opacity: 0;
+    animation: appearBottom 1.2s ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+#heroSection {
+    animation: fadeIn 1.2s ease-out;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--headerFont);
     color: var(--headerColor);
@@ -20,6 +52,8 @@ a, p {
 
 #heroSection h1{
     color: white;
+    animation: fadeIn 1s ease-out 0.3s forwards;
+    opacity: 0;
 }
 
 .menuSection img {
@@ -35,15 +69,26 @@ a, p {
     width: 300px;
     object-fit:cover;
 }
-
 .gallery img {
     height: 250px;
     width: 100%;
     object-fit: cover;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
 }
+
+.gallery .row:nth-child(1) img {animation-delay: .1s;}
+.gallery .row:nth-child(2) img {animation-delay: .3s;}
+.gallery .row:nth-child(3) img {animation-delay: .5s;}
 
 .bgColorFooter {
     background-color: var(--sectionBg);
+    opacity: 0;
+    animation: appearBottom 1s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 }
 
 .bgColorFooter img {
