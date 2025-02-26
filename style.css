@@ -50,9 +50,13 @@ a, p {
     color: var(--secondaryColor);
 }
 
+section {
+    padding: 80px 10%;
+}
+
 #heroSection h1{
     color: white;
-    animation: fadeIn 1s ease-out 0.3s forwards;
+    animation: appearBottom 1s ease-out 0.3s forwards;
     opacity: 0;
 }
 
@@ -70,6 +74,7 @@ a, p {
     object-fit:cover;
 }
 .gallery img {
+    will-change: transform, opacity;
     height: 250px;
     width: 100%;
     object-fit: cover;
