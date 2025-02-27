@@ -30,6 +30,12 @@
         transform: translateY(0);
     }
 }
+.scrollBlock, .gallery img, .bgColorFooter {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    /* contain: layout paint style; */
+}
+
 .scrollBlock {
     opacity: 0;
     animation: appearBottom 1.2s ease-out both;
@@ -74,7 +80,6 @@ section {
     object-fit:cover;
 }
 .gallery img {
-    will-change: transform, opacity;
     height: 250px;
     width: 100%;
     object-fit: cover;
@@ -128,4 +133,17 @@ section {
     padding: 250px 0;
     color: white;
     opacity: .75;
+}
+
+@media (max-width: 768px) {
+    .scrollBlock {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        animation: none;
+    }
+    .scrollBlock.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
