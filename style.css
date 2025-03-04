@@ -23,22 +23,19 @@
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
     }
     to {
         opacity: .75;
-        transform: translateY(0);
     }
 }
 .scrollBlock, .gallery img, .bgColorFooter {
     will-change: transform, opacity;
     backface-visibility: hidden;
-    /* contain: layout paint style; */
 }
 
 .scrollBlock {
     opacity: 0;
-    animation: appearBottom 1.2s ease-out both;
+    animation: appearBottom 1.5s ease-out both;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
 }
@@ -55,15 +52,34 @@ a, p {
     font-family: var(--secondaryFont);
     color: var(--secondaryColor);
 }
-
 section {
     padding: 80px 10%;
 }
-
-#heroSection h1{
+#heroSection h1, #heroSection p{
     color: white;
     animation: appearBottom 1s ease-out 0.3s forwards;
     opacity: 0;
+}
+#heroSection button {
+    color: var(--headerColor);
+    background-color: var(--sectionBg);
+    animation: appearBottom 1s ease-out 0.3s forwards;
+}
+#heroSection button:hover {
+    background-color: var(--headerColor);
+    color: white;
+}
+#heroSection {
+    background-attachment: fixed;
+    background-image: url("imgs/heroBg.jpeg");
+    background-position: center;
+    background-size: cover;
+
+    height: 100vh;
+
+    padding: 250px 0 200px 0;
+    color: white;
+    opacity: .75;
 }
 
 .menuSection img {
@@ -125,16 +141,6 @@ section {
     color: var(--secondaryColor);
 }
 
-#heroSection {
-    background-image: url("imgs/heroBg.jpeg");
-    background-position: center;
-    height:max-content;
-    background-size: cover;
-    padding: 250px 0;
-    color: white;
-    opacity: .75;
-}
-
 @media (max-width: 768px) {
     .scrollBlock {
         opacity: 0;
@@ -147,4 +153,13 @@ section {
         transform: translateY(0);
     }
 
+    .gallery .row:nth-child(1) img {animation-delay: .1s;}
+    .gallery .row:nth-child(2) img {animation-delay: .3s;}
+    .gallery .row:nth-child(3) img {animation-delay: .5s;}
+}
+
+@media (max-width: 576px) {
+    #heroSection {
+        padding: 150px 0 50px 0;
+    }
 }
